@@ -13,7 +13,9 @@ export default Arena({
         /**
          * Define your room handlers:
          */
-        gameServer.define('my_room', MyRoom);
+        gameServer
+            .define('my_room', MyRoom)
+            .filterBy(['realm']);
 
     },
 

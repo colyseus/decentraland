@@ -8,10 +8,16 @@
 ///<reference lib="es2015.iterable" />
 
 import { Client, Room } from "colyseus.js";
-import { isPreviewMode } from '@decentraland/EnvironmentAPI'
+import { isPreviewMode, getCurrentRealm } from '@decentraland/EnvironmentAPI'
 
-export async function connect(roomName: string, options?: any) {
+export async function connect(roomName: string, options: any = {}) {
     const isPreview = await isPreviewMode();
+    const realm = await getCurrentRealm();
+
+    //
+    // make sure users are matched together by the same "realm".
+    //
+    options.realm = realm?.displayName;
 
     // const ENDPOINT = "wss://hept-j.colyseus.dev";
     const ENDPOINT = (isPreview)
