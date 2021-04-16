@@ -34,6 +34,15 @@ To avoid TypeScript compilation errors you'll need to edit `tsconfig.json`, and 
 }
 ```
 
+```typescript
+///<reference lib="es2015.symbol" />
+///<reference lib="es2015.symbol.wellknown" />
+///<reference lib="es2015.collection" />
+///<reference lib="es2015.iterable" />
+
+import { Client } from "colyseus.js";
+```
+
 > The Colyseus SDK requires a few TypeScript libraries that are excluded by default by Decentraland.
 
 
