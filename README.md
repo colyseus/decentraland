@@ -4,6 +4,8 @@ This repository contains a Decentraland Scene that connects to an authoritative 
 
 ![](screenshot.png)
 
+The demonstration starts with a single block placed at the center of the scene. Whenever a player jumps on top of a block - a new block is created at a higher position.
+
 ---
 
 ## Using Colyseus SDK with Decentraland
