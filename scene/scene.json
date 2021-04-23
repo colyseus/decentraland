@@ -1,18 +1,19 @@
 {
   "display": {
-    "title": "Colyseus + Decentraland",
-    "favicon": "favicon_asset"
+    "title": "Colyseus Multiplayer Tower",
+    "favicon": "favicon_asset",
+    "navmapThumbnail": "scene-thumbnail.png"
   },
   "contact": {
-    "name": "author-name",
-    "email": ""
+    "name": "Endel Dreyer",
+    "email": "endel.dreyer@gmail.com"
   },
-  "owner": "",
+  "owner": "Endel Dreyer",
   "scene": {
     "parcels": [
-      "0,0"
+      "25,23"
     ],
-    "base": "0,0"
+    "base": "25,23"
   },
   "communications": {
     "type": "webrtc",

@@ -15,10 +15,12 @@
   },
   "dependencies": {
     "@dcl/ecs-scene-utils": "^1.6.1",
+    "@dcl/ui-scene-utils": "^1.7.1",
     "colyseus.js": "^0.14.1-1.alpha.0"
   },
   "bundleDependencies": [
     "colyseus.js",
-    "@dcl/ecs-scene-utils"
+    "@dcl/ecs-scene-utils",
+    "@dcl/ui-scene-utils"
   ]
 }

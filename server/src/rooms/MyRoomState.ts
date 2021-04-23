@@ -1,4 +1,9 @@
-import { Schema, Context, ArraySchema, type } from "@colyseus/schema";
+import { Schema, Context, ArraySchema, MapSchema, type } from "@colyseus/schema";
+
+export class Player extends Schema {
+  @type("string") name: string;
+  @type("number") ranking: number;
+}
 
 export class Block extends Schema {
   @type("number") x: number;
@@ -7,5 +12,7 @@ export class Block extends Schema {
 }
 
 export class MyRoomState extends Schema {
+  @type("number") countdown: number = 60 * 2;
   @type([Block]) blocks = new ArraySchema<Block>();
+  @type({ map: Player }) players = new MapSchema<Player>();
 }

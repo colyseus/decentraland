@@ -9,6 +9,7 @@
 
 import { Client, Room } from "colyseus.js";
 import { isPreviewMode, getCurrentRealm } from '@decentraland/EnvironmentAPI'
+import { getUserData } from "@decentraland/Identity";
 
 export async function connect(roomName: string, options: any = {}) {
     const isPreview = await isPreviewMode();
@@ -18,6 +19,9 @@ export async function connect(roomName: string, options: any = {}) {
     // make sure users are matched together by the same "realm".
     //
     options.realm = realm?.displayName;
+    options.userData = await getUserData();
+
+    log("userData:", options.userData);
 
     // const ENDPOINT = "wss://hept-j.colyseus.dev";
     const ENDPOINT = (isPreview)
