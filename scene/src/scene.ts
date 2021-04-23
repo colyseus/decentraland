@@ -6,7 +6,7 @@ const viewSourceBlock = new Entity('multicolorPattern')
 engine.addEntity(viewSourceBlock)
 viewSourceBlock.setParent(_scene)
 const transform12 = new Transform({
-  position: new Vector3(1.5, 0.7, 1.5),
+  position: new Vector3(8, 0.7, 1.5),
   rotation: new Quaternion(0, 0, 0, 1),
   scale: new Vector3(1, 1, 1)
 })
