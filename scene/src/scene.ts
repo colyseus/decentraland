@@ -1,5 +1,10 @@
 import * as utils from '@dcl/ecs-scene-utils';
 
+//
+// Most of the code on this file have been generated through Decentraland Builder.
+// https://builder.decentraland.org/
+//
+
 export const _scene = new Entity('_scene')
 
 const viewSourceBlock = new Entity('multicolorPattern')
@@ -23,10 +28,6 @@ viewSourceBlock.addComponent(
         { hoverText: "View source-code" }
     )
 );
-
-//
-// All the code below has been generated through Decentraland Builder:
-//
 
 engine.addEntity(_scene)
 const transform = new Transform({
