@@ -12,7 +12,7 @@ export class Block extends Schema {
 }
 
 export class MyRoomState extends Schema {
-  @type("number") countdown: number = 60 * 2;
+  @type("number") countdown: number;
   @type([Block]) blocks = new ArraySchema<Block>();
   @type({ map: Player }) players = new MapSchema<Player>();
 }
