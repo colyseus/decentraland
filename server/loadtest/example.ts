@@ -1,25 +1,25 @@
-import { Room, Client } from "colyseus.js";
+import { Client, Room } from "colyseus.js";
+import { cli, Options } from "@colyseus/loadtest";
 
-export function requestJoinOptions (this: Client, i: number) {
-    return { requestNumber: i };
-}
+export async function main(options: Options) {
+    const client = new Client(options.endpoint);
+    const room: Room = await client.joinOrCreate(options.roomName, {
+        // your join options here...
+    });
 
-export function onJoin(this: Room) {
-    console.log(this.sessionId, "joined.");
+    console.log("joined successfully!");
 
-    this.onMessage("*", (type, message) => {
-        console.log(this.sessionId, "received:", type, message);
+    room.onMessage("message-type", (payload) => {
+        // logic
+    });
+
+    room.onStateChange((state) => {
+        console.log("state change:", state);
+    });
+
+    room.onLeave((code) => {
+        console.log("left");
     });
 }
 
-export function onLeave(this: Room) {
-    console.log(this.sessionId, "left.");
-}
-
-export function onError(this: Room, err: any) {
-    console.log(this.sessionId, "!! ERROR !!", err.message);
-}
-
-export function onStateChange(this: Room, state: any) {
-    console.log(this.sessionId, "new state:", state);
-}
+cli(main);
