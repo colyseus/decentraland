@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@dcl/js-runtime": "7.3.14",
-    "@dcl/sdk": "^7.3.14"
+    "@dcl/sdk": "^7.3.15"
   },
   "engines": {
     "node": ">=16.0.0",
@@ -24,8 +24,9 @@
     "trailingComma": "none"
   },
   "dependencies": {
-    "colyseus.js": "^0.15.13",
+    "@dcl/sdk-commands": "^7.3.15",
+    "colyseus.js": "^0.15.14",
     "whatwg-url-without-unicode": "^8.0.0-3",
-    "xmlhttprequest-polyfill": "^0.1.1"
+    "xmlhttprequest-polyfill": "^0.1.2"
   }
 }
